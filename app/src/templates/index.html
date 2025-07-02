@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Table List</title>
+</head>
+<body>
+    <h1>Demo Table 一覧</h1>
+
+    <form action="/add" method="post">
+        <label for="value">追加する値:</label>
+        <input type="text" id="value" name="value" required>
+        <button type="submit">追加</button>
+    </form>
+
+    <h2>登録済みデータ</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Value</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.value }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ item.updated_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
